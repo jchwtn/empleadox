@@ -29,7 +29,7 @@ public class Main {
             System.out.println("3. Registrar empleado por horas");
             System.out.println("4. Mostrar todos los empleados");
             System.out.println("5. Buscar empleado por ID");
-            System.out.println("6. Calcular salario final");
+            System.out.println("6. Calcular salario empleado");
             System.out.println("7. Aumentar salario base");
             System.out.println("8. Mostrar empleados mayores de edad");
             System.out.println("9. Salir");
@@ -108,15 +108,96 @@ public class Main {
                     break;
 
                 case 4: {
-                    for (Empleado p: lstEmpleados){
-                        System.out.println(p);
-                    }
+                    int opcEmpl;
+                    do {
+                        System.out.println("1. Mostrar todos los empleados");
+                        System.out.println("2. Mostrar empleados administrativos");
+                        System.out.println("3. Mostrar empleados de ventas");
+                        System.out.println("4. Mostrar empleados de horas");
+
+
+                        opcEmpl = teclado.nextInt();
+
+                        switch (opcEmpl){
+                            case 1:
+                                System.out.println("1. Mostrar todos los empleados");
+                                for (Empleado p: lstEmpleados){
+                                    System.out.println(p);
+                                }
+                                break;
+
+                            case 2:
+                                System.out.println("2. Mostrar empleados administrativos");
+                                for (Empleado p: lstEmpleados){
+                                    if (p instanceof EmpleadoAdministrativo){
+                                        System.out.println(p);
+                                    }
+                                }
+                                break;
+
+                            case 3:
+                                System.out.println("3. Mostrar empleados de ventas");
+                                for (Empleado p: lstEmpleados){
+                                    if (p instanceof EmpleadoVentas){
+                                        System.out.println(p);
+                                    }
+                                }break;
+
+                            case 4:
+                                System.out.println("4. Mostrar empleados de horas");
+                                for (Empleado p: lstEmpleados){
+                                    if (p instanceof EmpleadoHoras){
+                                        System.out.println(p);
+                                    }
+                                }break;
+
+
+                            case 5:
+                                break;
+                        }
+                    }while (opcEmpl != 5);
+
                 }
                 break;
 
+                case 5: {
+                    int opcSala;
+                    do {
+                        System.out.println("A qué tipo de empleado deseas calcular el salario?");
+                        System.out.println("1. Empleados administrativos");
+                        System.out.println("2. Empleados de ventas");
+                        System.out.println("3. Empleados de horas");
+
+
+                        opcSala = teclado.nextInt();
+
+                        switch (opcSala){
+                            case 1:
+                                System.out.println("1. Empleado administrativo");
+                                System.out.println("El promedio es: " + ea1.calcularSalarioFinal());
+                                break;
+
+                            case 2:
+                                System.out.println("2. Empleado ventas");
+                                System.out.println("El promedio es: " + ev1.calcularSalarioFinal());
+                                break;
+
+                            case 3:
+                                System.out.println("1. Empleado horas");
+                                System.out.println("El promedio es: " + eh1.calcularSalarioFinal());
+                                break;
+
+                            case 4:
+                                break;
+                        }
+                    }while (opcSala != 5);
+
+                }
+                break;
+
+
+                }
             }
-
         }while (opc != 9);
-
     }
 }

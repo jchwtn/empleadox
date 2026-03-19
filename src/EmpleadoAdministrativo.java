@@ -33,4 +33,9 @@ public class EmpleadoAdministrativo extends Empleado {
         System.out.println("Bonificacion " + bonificacion);
 
     }
+
+    @Override
+    public double calcularSalarioFinal(){
+        return (this.salarioBase + this.bonificacion);
+    }
 }

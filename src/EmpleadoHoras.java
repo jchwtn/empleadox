@@ -45,4 +45,9 @@ public class EmpleadoHoras extends Empleado{
         System.out.println("Valor hora " + valorHora);
 
     }
+
+    @Override
+    public double calcularSalarioFinal(){
+        return this.valorHora*this.horasTrabajadas;
+    }
 }

@@ -53,4 +53,12 @@ public class Empleado {
         System.out.println("Salario base " + salarioBase);
     }
 
+    public void aumentarSalario(double porcentaje){
+        this.salarioBase += porcentaje;
+
+    }
+
+    public abstract double calcularSalarioFinal();
+
+
 }

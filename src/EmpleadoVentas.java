@@ -45,4 +45,10 @@ public class EmpleadoVentas extends Empleado{
         System.out.println("Comision " + comision);
 
     }
+
+    @Override
+    public double calcularSalarioFinal(){
+        comision=totalVentas*comision;
+        return (this.totalVentas * (this.comision/100))+this.salarioBase;
+    }
 }
