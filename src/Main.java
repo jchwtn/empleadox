@@ -190,12 +190,7 @@ public class Main {
                             case 4:
                                 break;
                         }
-                    }while (opcSala != 5);
-
-                }
-                break;
-
-
+                    }while (opcSala != 4);
                 }
             }
         }while (opc != 9);

@@ -1,4 +1,4 @@
-public class Empleado {
+public abstract class Empleado {
 
     protected String nombre;
     protected int edad;
